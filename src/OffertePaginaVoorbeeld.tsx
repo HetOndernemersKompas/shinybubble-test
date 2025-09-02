@@ -332,7 +332,7 @@ function CalculatorWizard() {
       const disabled = !!l.locked || (l.code.startsWith("INT_") && !interior) || (l.code === "COAT_PTFE" && finish !== "Alleen wassen") || (l.code === "COAT_CER" && finish === "Alleen wassen");
       return (
         <div key={l.code} className="flex items-center justify-between py-2">
-          <label className={["flex items-center gap-3", disabled ? "opacity-60" : ""].join(" ") }>
+          <label className={["flex items-center gap-3", disabled ? "opacity-60" : ""].join(" ")}>
             <input type="checkbox" className="w-4 h-4" checked={checked} disabled={disabled} onChange={(e)=>toggleLineInState(l.code, e.currentTarget.checked)} />
             <span>{l.label}{l.note ? ` – ${l.note}` : ''}</span>
           </label>
@@ -664,3 +664,5 @@ function FAQ() {
 function Footer() {
   return (
     <footer className="mt-10 py-10 text-center text-sm text-gray-500">&copy; {new Date().getFullYear()} Shiny Bubble</footer>
+  );
+}
